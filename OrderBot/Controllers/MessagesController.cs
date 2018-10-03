@@ -28,7 +28,8 @@ namespace OrderBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => _dialogFactory.Create(activity.Text));
+                //await Conversation.SendAsync(activity, () => _dialogFactory.Create(activity.Text));
+                await Conversation.SendAsync(activity, () => new RootDialog());
             }
             else
             {
@@ -89,5 +90,6 @@ namespace OrderBot
 
             return null;
         }
+
     }
 }

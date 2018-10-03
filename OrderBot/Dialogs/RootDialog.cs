@@ -20,22 +20,11 @@ namespace OrderBot.Dialogs
 
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
-            var reply = context.MakeMessage();
-            HeroCard heroCard = new HeroCard
-            {
-                Title = "Hi, what can I help you with?",
-                Images = new List<CardImage> { new CardImage("https://www.fillmurray.com/640/360") },
-                Buttons = new List<CardAction> {
-                                    new CardAction(type: ActionTypes.PostBack, title: "Existing Order", value: WelcomeEnum.ExistingOrder.ToString()),
-                                    new CardAction(type: ActionTypes.PostBack, title: "New Order", value: WelcomeEnum.NewOrder.ToString()),
-                                    new CardAction(type: ActionTypes.PostBack, title: "Help", value: WelcomeEnum.Support.ToString()) }
-            };
+            var reply = await result;
 
-            reply.Attachments.Add(heroCard.ToAttachment());
+            context.PostAsync($"{ reply.ToString() }");
 
-            await context.PostAsync(reply);
-
-            context.Wait(this.OnOptionSelected);
+            context.Wait(MessageReceivedAsync);
         }
 
         private async Task OnOptionSelected(IDialogContext context, IAwaitable<IMessageActivity> result)
