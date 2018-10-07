@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderBot.Luis", "OrderBot.L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderBot.Utilities", "OrderBot.Utilities\OrderBot.Utilities.csproj", "{EFAA2E7A-B7DA-4A9F-B183-7210F2AD3C4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderBot.Entity", "OrderBot.Entity\OrderBot.Entity.csproj", "{91764E8F-FE29-496F-A1BA-803FD2B90CD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EFAA2E7A-B7DA-4A9F-B183-7210F2AD3C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFAA2E7A-B7DA-4A9F-B183-7210F2AD3C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFAA2E7A-B7DA-4A9F-B183-7210F2AD3C4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91764E8F-FE29-496F-A1BA-803FD2B90CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91764E8F-FE29-496F-A1BA-803FD2B90CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91764E8F-FE29-496F-A1BA-803FD2B90CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91764E8F-FE29-496F-A1BA-803FD2B90CD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

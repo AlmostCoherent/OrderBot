@@ -1,16 +1,16 @@
-﻿using System;
-using Microsoft.Bot.Builder.FormFlow;
+﻿using Microsoft.Bot.Builder.FormFlow;
+using System;
 
-namespace OrderBot.Shared.FormModels
+namespace OrderBot.Dialogs.Support
 {
     [Serializable]
     public class SupportModel
     {
-        [Prompt("Please enter your {&}")]
+        [Prompt("Can you give us the {&} that you have an issue with?")]
         public string OrderNumber { get; set; }
 
         [Prompt("Please enter a short description of your {&}")]
-        public string Problem { get; set; }
+        public string Message { get; set; }
 
         [Prompt("Please enter your {&}")]
         public string Email { get; set; }

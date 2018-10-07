@@ -1,8 +1,6 @@
-﻿using OrderBot.Shared.Enums;
+﻿using OrderBot.Dialogs.Support;
+using OrderBot.Shared.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace OrderBot.Dialogs
 {

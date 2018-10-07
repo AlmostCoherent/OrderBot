@@ -28,8 +28,7 @@ namespace OrderBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                //await Conversation.SendAsync(activity, () => _dialogFactory.Create(activity.Text));
-                await Conversation.SendAsync(activity, () => new RootDialog());
+                await Conversation.SendAsync(activity, () => _dialogFactory.Create(activity.Text));
             }
             else
             {
