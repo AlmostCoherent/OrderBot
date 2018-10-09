@@ -66,7 +66,9 @@
       <DependentUpon>201810071747331_Added to support model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Support\ISupportRequestMessage.cs" />
     <Compile Include="Models\Support\SupportRequest.cs" />
+    <Compile Include="Models\Support\SupportRequestMessageRepository.cs" />
     <Compile Include="Models\Support\SupportRequestRepository.cs" />
     <Compile Include="Models\Support\SupportRequestMessage.cs" />
     <Compile Include="Models\Support\SupportStatus.cs" />

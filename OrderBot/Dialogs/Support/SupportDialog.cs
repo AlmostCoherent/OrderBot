@@ -14,6 +14,7 @@ namespace OrderBot.Dialogs.Support
     public class SupportDialog : IDialog<object>
     {
         private static readonly ISupportRequestRepository _supportRepository = ServiceResolver.GetService<ISupportRequestRepository>();
+        private static readonly ISupportRequestMessageRepository _supportRequestMessageRepository = ServiceResolver.GetService<ISupportRequestMessageRepository>();
         public SupportDialog()
         {
         }
@@ -27,17 +28,40 @@ namespace OrderBot.Dialogs.Support
 
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
-            var activity = await result as SupportRequest;
+            var activity = await result as SupportModel;
 
-            _supportRepository.InsertSupportRequest(activity);
+            SupportRequest supportRequest = CreateSupportRequestEntity(activity);
+
+            _supportRepository.InsertSupportRequest(supportRequest);
             _supportRepository.Save();
 
-            var id = activity.SupportId;
+            SupportRequestMessage supportRequestMessage = CreateSupportRequestMessageEntity(activity, supportRequest);
 
-            var temp = _supportRepository.GetSupportRequests();
+            _supportRequestMessageRepository.InsertSupportRequestMessage(supportRequestMessage);
+            _supportRequestMessageRepository.Save();
 
             await context.PostAsync("");
         }
 
+        private static SupportRequestMessage CreateSupportRequestMessageEntity(SupportModel activity, SupportRequest supportRequest)
+        {
+            var newSupportId = supportRequest.SupportId;
+
+            SupportRequestMessage supportRequestMessage = new SupportRequestMessage();
+            supportRequestMessage.MessageDate = DateTime.Now;
+            supportRequestMessage.SupportMessage = activity.Message;
+            supportRequestMessage.SupportId = newSupportId;
+            return supportRequestMessage;
+        }
+
+        private static SupportRequest CreateSupportRequestEntity(SupportModel activity)
+        {
+            var supportRequest = new SupportRequest();
+
+            supportRequest.Email = activity.Email;
+            supportRequest.OrderNumber = Int32.Parse(activity.OrderNumber);
+            supportRequest.Status = SupportStatus.New;
+            return supportRequest;
+        }
     }
 }

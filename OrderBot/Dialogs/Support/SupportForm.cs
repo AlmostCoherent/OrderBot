@@ -19,7 +19,7 @@ namespace OrderBot.Dialogs.Support
 
             return new FormBuilder<SupportModel>()
                 .Message("Please give us a few details.")
-                .Field(nameof(SupportModel.OrderNumber),
+                .Field("OrderNumber",
                     validate: async (state, value) => {
                         var result = new ValidateResult { IsValid = true, Value = value };
                         var order = _supportRepository.GetSupportRequestByID(Convert.ToInt32(value));
@@ -34,9 +34,12 @@ namespace OrderBot.Dialogs.Support
                             return result;
                         }
                     })
-                .Field(nameof(SupportModel.Email))
-                .Field(nameof(SupportModel.Message))
-                .Confirm(prompt: "Are the following detail correct?")
+                .Field("Email")
+                .Field("Message")
+                .Confirm(prompt: @"Are the following detail correct?\r\n" +
+                    "Order number: { OrderNumber }\r\n" +
+                    "Email address: { Email }\r\n" +
+                    "Message: { Message }")
                 .Message("Thanks for letting us know, we'll be in touch soon.")
                 .OnCompletion(processHotelsSearch)
                 .Build();

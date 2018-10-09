@@ -11,6 +11,7 @@ namespace OrderBot.App_Start
             var container = new UnityContainer();
 
             container.RegisterType<ISupportRequestRepository, SupportRequestRepository>();
+            container.RegisterType<ISupportRequestMessageRepository, SupportRequestMessageRepository>();
 
             ServiceResolver.Container = container;
         }
