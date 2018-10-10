@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderBot.Utilities", "Order
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderBot.Entity", "OrderBot.Entity\OrderBot.Entity.csproj", "{91764E8F-FE29-496F-A1BA-803FD2B90CD3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderBot.Tests", "OrderBotTests\OrderBot.Tests.csproj", "{F45D0DC4-9F38-4B80-BBAC-E24EF471760A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{91764E8F-FE29-496F-A1BA-803FD2B90CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91764E8F-FE29-496F-A1BA-803FD2B90CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91764E8F-FE29-496F-A1BA-803FD2B90CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F45D0DC4-9F38-4B80-BBAC-E24EF471760A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F45D0DC4-9F38-4B80-BBAC-E24EF471760A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F45D0DC4-9F38-4B80-BBAC-E24EF471760A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F45D0DC4-9F38-4B80-BBAC-E24EF471760A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
