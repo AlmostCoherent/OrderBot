@@ -158,8 +158,10 @@
     <Compile Include="Dialogs\DialogFactory.cs" />
     <Compile Include="Dialogs\IDialogFactory.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
+    <Compile Include="Dialogs\RootLuisDialog.cs" />
     <Compile Include="Dialogs\Support\SupportDialog.cs" />
     <Compile Include="Dialogs\Support\SupportForm.cs" />
+    <Compile Include="Dialogs\Support\SupportLuisDialog.cs" />
     <Compile Include="Dialogs\Support\SupportModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
